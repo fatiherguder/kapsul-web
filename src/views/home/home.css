@@ -1,0 +1,108 @@
+.video-area{
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+}
+
+.blackout{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: black;
+    opacity: 0.2;
+}
+
+.home-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.logo{
+    position:relative;
+    height: auto;
+    width: 25vw;
+}
+
+.subtitle{
+    position: relative;
+    color: white;
+    font-size: 0.9vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.counter-area{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    left: 20vw; 
+    right: 20vw; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.apply-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 5vh;
+    color: white;
+    background-color: transparent;
+    border-radius: 32px;
+    margin-top: 100px;
+    cursor: pointer;
+    border: 3px solid #4da1ca;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.apply-btn:hover{
+    -webkit-box-shadow: inset -1px 3px 8px 1px #1F87FF, 2px 5px 16px 0px #4da1ca, 5px 5px 15px 2px rgba(255,255,255,0.33); 
+    box-shadow:  -1px 3px 8px 1px #1F87FF, 2px 5px 16px 0px #4da1ca, 5px 5px 15px 2px rgba(255,255,255,0.33);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.apply-text{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-shadow: 4px 1px 10px rgba(77, 161, 202, 1);
+    padding-top: 1vh;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo{
+        width: 40vw;
+    }
+
+    .subtitle{
+        font-size: 2vw;
+    }
+
+    .counter-area{
+        left: 10vw;
+        right: 10vw;
+    }
+    .apply-btn{
+        width: 50vw;
+        height: 6vh;
+    }
+
+  }

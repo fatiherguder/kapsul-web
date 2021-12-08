@@ -1,0 +1,15 @@
+.info-image{    
+    background-image: url("../../assets/kapsul.png");    
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100%; 
+    width: 60vw;   
+}
+
+@media only screen and (max-width: 600px) {
+    .info-image{
+        height: 45vh;
+        width: 45vh;
+        margin-bottom: 30px;
+    }
+}

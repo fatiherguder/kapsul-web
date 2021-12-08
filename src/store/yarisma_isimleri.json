@@ -1,0 +1,280 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "challange_name": "Akıllı Ulaşım"
+        },
+        {
+            "id": "2",
+            "challange_name": "Biyoteknoloji İnovasyon"
+        },
+        {
+            "id": "3",
+            "challange_name": "Çevre ve Enerji Teknolojileri - Lise"
+        },
+        {
+            "id": "4",
+            "challange_name": "Çevre ve Enerji Teknolojileri - Üniversite"
+        },
+        {
+            "id": "5",
+            "challange_name": "Efficiency Challenge Elektrikli Araç - ELEKTROMOBİL"
+        },
+        {
+            "id": "6",
+            "challange_name": "Efficiency Challenge Elektrikli Araç - Hidromobil"
+        },
+        {
+            "id": "7",
+            "challange_name": "Eğitim Teknolojileri Yarışması"
+        },
+        {
+            "id": "8",
+            "challange_name": "Hack İstanbul"
+        },
+        {
+            "id": "9",
+            "challange_name": "Helikopter Tasarım"
+        },
+        {
+            "id": "10",
+            "challange_name": "Jet Motor Tasarım"
+        },
+        {
+            "id": "11",
+            "challange_name": "Karma Sürü Simülasyon"
+        },
+        {
+            "id": "12",
+            "challange_name": "Lise Öğrencileri Kutup Araştırma Projeleri"
+        },
+        {
+            "id": "13",
+            "challange_name": "Liseler Arası Efficiency Challenge Elektrikli Araç"
+        },
+        {
+            "id": "14",
+            "challange_name": "Liseler Arası İnsansız Hava Araçları - Döner Kanat"
+        },
+        {
+            "id": "15",
+            "challange_name": "Liseler Arası İnsansız Hava Araçları - Sabit Kanat"
+        },
+        {
+            "id": "16",
+            "challange_name": "Model Uydu Yarışması"
+        },
+        {
+            "id": "17",
+            "challange_name": "Pardus 21 Hata Yakalama ve Öneri"
+        },
+        {
+            "id": "18",
+            "challange_name": "Robotaksi-Binek Otonom Araç - Hazır Araç Kategorisi"
+        },
+        {
+            "id": "19",
+            "challange_name": "Robotaksi-Binek Otonom Araç - Özgün Araç Kategorisi"
+        },
+        {
+            "id": "20",
+            "challange_name": "Robotik - Çizgi İzleyen (Temel Seviye)    "
+        },
+        {
+            "id": "21",
+            "challange_name": "Robotik - Çizgi İzleyen( İleri Seviye)    "
+        },
+        {
+            "id": "22",
+            "challange_name": "Robotik - Endüstriyel Robot Kol    "
+        },
+        {
+            "id": "23",
+            "challange_name": "Robotik - Hızlı Çizgi İzleyen    "
+        },
+        {
+            "id": "24",
+            "challange_name": "Robotik - İnsansız Hava Aracı (Mini Drone)    "
+        },
+        {
+            "id": "25",
+            "challange_name": "Robotik - Labirent Ustası    "
+        },
+        {
+            "id": "26",
+            "challange_name": "Robotik - Mini Sumo    "
+        },
+        {
+            "id": "27",
+            "challange_name": "Robotik - Serbest    "
+        },
+        {
+            "id": "28",
+            "challange_name": "Robotik - Tasarla-Çalıştır    "
+        },
+        {
+            "id": "29",
+            "challange_name": "Robotik - Temalı    "
+        },
+        {
+            "id": "30",
+            "challange_name": "Robotik - Tozkoparan (Temel Seviye)    "
+        },
+        {
+            "id": "31",
+            "challange_name": "Robotik - Yumurta Toplama (Caretta Caretta)    "
+        },
+        {
+            "id": "32",
+            "challange_name": "Roket - Alçak İrtifa Kategorisi"
+        },
+        {
+            "id": "33",
+            "challange_name": "Roket - Orta İrtifa Kategorisi "
+        },
+        {
+            "id": "34",
+            "challange_name": "Roket - Yüksek İrtifa Kategorisi"
+        },
+        {
+            "id": "35",
+            "challange_name": "Roket - Zorlu Görev Kategorisi"
+        },
+        {
+            "id": "36",
+            "challange_name": "Sağlıkta Yapay Zeka"
+        },
+        {
+            "id": "37",
+            "challange_name": "Sanayide Dijital Teknolojiler - İleri Kategori"
+        },
+        {
+            "id": "38",
+            "challange_name": "Sanayide Dijital Teknolojiler - Temel Kategori"
+        },
+        {
+            "id": "39",
+            "challange_name": "Savaşan İHA - Döner Kanat"
+        },
+        {
+            "id": "40",
+            "challange_name": "Savaşan İHA - Sabit Kanat"
+        },
+        {
+            "id": "41",
+            "challange_name": "Sürü İHA"
+        },
+        {
+            "id": "42",
+            "challange_name": "Tarım Teknolojileri - Lise"
+        },
+        {
+            "id": "43",
+            "challange_name": "Tarım Teknolojileri - Üniversite"
+        },
+        {
+            "id": "44",
+            "challange_name": "Tarımsal İnsansız Kara Aracı"
+        },
+        {
+            "id": "45",
+            "challange_name": "Turizm Teknolojileri"
+        },
+        {
+            "id": "46",
+            "challange_name": "Türkçe Doğal Dil İşleme"
+        },
+        {
+            "id": "47",
+            "challange_name": "Türkiye Drone Şampiyonası"
+        },
+        {
+            "id": "48",
+            "challange_name": "Uçan Araba Tasarım"
+        },
+        {
+            "id": "49",
+            "challange_name": "Ulaşımda Yapay Zeka"
+        },
+        {
+            "id": "50",
+            "challange_name": "Uluslararası İHA Yarışması - Döner Kanat"
+        },
+        {
+            "id": "51",
+            "challange_name": "Uluslararası İHA Yarışması - Sabit Kanat"
+        },
+        {
+            "id": "52",
+            "challange_name": "Uluslararası Serbest Görev İHA "
+        },
+        {
+            "id": "53",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Akıllı Şehirler ve Ulaşım"
+        },
+        {
+            "id": "54",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Bilgi ve İletişim Teknolojileri"
+        },
+        {
+            "id": "55",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Eğitim"
+        },
+        {
+            "id": "56",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Enerji ve Çevre"
+        },
+        {
+            "id": "57",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Gıda ve Tarım"
+        },
+        {
+            "id": "58",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Makine İmalatı ve Otomotiv"
+        },
+        {
+            "id": "59",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Sağlık"
+        },
+        {
+            "id": "60",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Savunma, Uzay ve Havacılık"
+        },
+        {
+            "id": "61",
+            "challange_name": "Üniversite Öğrencileri Araştırma Projesi - Sosyal Yenilikçilik ve Girişimcilik"
+        },
+        {
+            "id": "62",
+            "challange_name": "İletişim Teknolojileri"
+        },
+        {
+            "id": "63",
+            "challange_name": "İnsanlık Yararına - Sağlık ve İlk Yardım"
+        },
+        {
+            "id": "64",
+            "challange_name": "İnsanlık Yararına - Afet Yönetim"
+        },
+        {
+            "id": "65",
+            "challange_name": "İnsanlık Yararına - Engelli Dostu"
+        },
+        {
+            "id": "66",
+            "challange_name": "İnsanlık Yararına - Sosyal İnovasyon"
+        },
+        {
+            "id": "67",
+            "challange_name": "İnsansız Su Altı Sistemleri - Temel kategori"
+        },
+        {
+            "id": "68",
+            "challange_name": "İnsansız Su Altı Sistemleri - İleri Kategori"
+        },
+        {
+            "id": "69",
+            "challange_name": "Diğer"
+        }
+    ]
+}

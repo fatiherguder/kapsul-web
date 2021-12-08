@@ -1,0 +1,45 @@
+ .text-wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 1;
+    justify-content: center;
+    font-size: 1.5rem;
+    max-width: 60vh;
+    text-align: left;
+}
+
+.info-tittle{
+    font-size: 2rem;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;        
+}
+
+
+.info-subtitle{ 
+    margin-top: 8px;
+    font-size: 1.25rem;
+    font-family: 'Mulish', sans-serif; 
+}
+
+@media only screen and (max-width: 600px) {
+    .info-tittle{
+        font-size: 1.5rem;
+        font-weight: bold;        
+    }
+    
+    
+    .info-subtitle{ 
+        margin-top: 8px;
+        font-size: 1rem;
+        
+    }
+
+    .text-wrapper{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+  }

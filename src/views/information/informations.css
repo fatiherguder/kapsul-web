@@ -1,0 +1,51 @@
+.info-wrapper{
+    min-height: 100vh;
+    background-image: linear-gradient(134deg, rgba(1, 1, 1,0.02) 0%, rgba(1, 1, 1,0.02) 16%,transparent 16%, transparent 76%,rgba(58, 58, 58,0.02) 76%, rgba(58, 58, 58,0.02) 100%),linear-gradient(215deg, rgba(166, 166, 166,0.02) 0%, rgba(166, 166, 166,0.02) 33%,transparent 33%, transparent 79%,rgba(111, 111, 111,0.02) 79%, rgba(111, 111, 111,0.02) 100%),linear-gradient(303deg, rgba(215, 215, 215,0.02) 0%, rgba(215, 215, 215,0.02) 7%,transparent 7%, transparent 90%,rgba(192, 192, 192,0.02) 90%, rgba(192, 192, 192,0.02) 100%),linear-gradient(302deg, rgba(113, 113, 113,0.02) 0%, rgba(113, 113, 113,0.02) 34%,transparent 34%, transparent 73%,rgba(65, 65, 65,0.02) 73%, rgba(65, 65, 65,0.02) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+}
+
+.info-row{
+    display: flex;
+    height: 100vh;
+    justify-content: right;
+}
+
+.info-column{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+}
+
+.info-title{
+    font-family: 'Mulish', sans-serif;
+    font-size: 48px;
+    color: #19a9e1;
+    font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .img{
+        display: none;
+    }
+
+    .info-column{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-wrapper{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .info-title{
+        margin-bottom: 2rem;
+    }
+
+  }

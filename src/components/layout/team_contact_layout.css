@@ -1,0 +1,35 @@
+.form-container{
+    text-align: left;    
+    width: 80% !important;
+    margin: 0 auto; 
+    background: #f8f9fa;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.member-container{ 
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #cecccc;
+    border-radius: 5px 5px 5px 5px;
+}
+
+
+.action-button{
+    background: transparent;
+    border-style: none;
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .form-container{
+        font-size: 13px;
+        width: 90% !important;
+    }
+
+ }

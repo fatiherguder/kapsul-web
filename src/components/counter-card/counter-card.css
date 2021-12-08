@@ -1,0 +1,38 @@
+.cardArea{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.number{
+    color: white;
+    font-size: 1.7vw;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.title{
+    color: white;
+    font-size: 1.2vw;
+    border-top: 1px solid white;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .number{
+        font-size: 5vw;
+    }
+
+    .title{
+        font-size: 3vw;
+    }
+
+
+  }

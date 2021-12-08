@@ -1,0 +1,86 @@
+
+.footer{
+    min-height: 30vh;
+    background-image: repeating-linear-gradient(135deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(45deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(135deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(45deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(45deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(45deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(135deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(157.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(264,0%,88%,0.03) 0px, hsla(264,0%,88%,0.03) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, rgb(11,8,39),rgb(19,134,179));   
+}
+
+.footer-wrapper{   
+    color: whitesmoke;
+    font-size: 1.2rem;
+    margin: 0 15vw;
+    display: flex;
+    align-items: center;
+    height: 30vh;
+    justify-content: space-between;
+}
+
+.contact-area{
+    text-align: left;
+}
+
+.social-area{
+    display: flex;
+    flex-direction: column; 
+    text-align: right;
+    gap: 16px;
+    width: 300px;
+}
+
+.belediye-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-wrapper{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contact-icon{
+    color: whitesmoke;
+    margin-right: .8rem;
+}
+
+
+.belediye-logo{
+    height: 80px;
+    width: 80px;
+}
+
+.social-icon{
+    color: white;
+    height: 30px;
+    width: 30px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property:transform;
+}
+
+.social-icon:hover{
+    -webkit-transform: scale(1.6);
+    color: white;
+    transform: scale(1.6);
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+    .footer-wrapper{
+        height: 50vh;        
+        padding: 50px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .social-area{
+        justify-content: center;
+    }
+
+    .belediye-logo{
+        width: 75px;
+        height: 75px;
+    }
+}
