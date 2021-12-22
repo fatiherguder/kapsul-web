@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import { useLocation } from 'react-router'
 import BusinessContactLayout from '../../components/layout/business_contact._layout'
 import Backdrop from '@mui/material/Backdrop';
@@ -8,6 +8,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 const BusinessIdeaContact = () => {
 
     const [open, setOpen] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      });
+
     return (
         <div className="mt-5">
             <Backdrop

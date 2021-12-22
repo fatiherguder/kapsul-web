@@ -1,5 +1,5 @@
 
-import { React, useState } from 'react'
+import { React, useState, useContext } from 'react'
 import { Row, Col, Form } from "react-bootstrap";
 import "./personal_contact_layout.css";
 import LightingTextArea from './lighting_text_area';
@@ -12,18 +12,24 @@ import faculty from "../../store/fakulte.json";
 import department from "../../store/bolum.json";
 import district from "../../store/ilce.json";
 import { storage } from '../../firebase';
-
+import { MultiSelect } from '@mantine/core';
+import { PersonalApplyContext } from '../../context/PersonalApplyContext';
 
 const url = "https://kapsulcom.herokuapp.com/individual-form";
 
+
 export default function ContactLayout({ setOpen }) {
+    const { interests } = useContext(PersonalApplyContext);
+    const { contributions } = useContext(PersonalApplyContext);
 
     const [fadeValidated, setfadeValidated] = useState(false)
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
-
         const form = event.currentTarget;
+        var question1 = [];
+        question1.push(form[16].value);
+
         if (fadeValidated) {
             if (form.checkValidity() === false) {
                 event.preventDefault();
@@ -34,45 +40,40 @@ export default function ContactLayout({ setOpen }) {
 
                 storage
                     .ref(
-                        `bireysel-basvurular/${form[4].value}/${form[16].files[0].name}`
+                        `bireysel-basvurular/${form[4].value}/${form[15].files[0].name}`
                     )
-                    .put(form[16].files[0])
+                    .put(form[15].files[0])
                     .on('state_changed',
                         (snapShot) => {
                             //takes a snap shot of the process as it is happening
-                            console.log(snapShot)
                         }, (err) => {
                             //catches the errors
-                            console.log(err)
                         }, () => {
                             // gets the functions from storage refences the image storage in firebase by the children
                             // gets the download url then sets the image from firebase as the value for the imgUrl key:
-                            storage.ref('bireysel-basvurular').child(`${form[4].value}/${form[16].files[0].name}`).getDownloadURL()
-                                .then(fireBaseUrl => {                                  
-                                    if (fireBaseUrl != null) {                                        
+                            storage.ref('bireysel-basvurular').child(`${form[4].value}/${form[15].files[0].name}`).getDownloadURL()
+                                .then(fireBaseUrl => {
+                                    if (fireBaseUrl != null) {
                                         var applyData = {
                                             "name": form[0].value,
                                             "surname": form[1].value,
                                             "gender": form[2].value,
                                             "dateOfBirth": form[3].value,
-                                            "tcNo": form[4].value,
-                                            "email": form[5].value,
-                                            "school": form[11].value,
-                                            "faculty": form[12].value,
-                                            "department": form[13].value,
-                                            "grade": form[14].value,
-                                            "district": form[9].value,
-                                            "education_level": form[10].value,
-                                            "file": fireBaseUrl,
-                                            "country": form[7].value === 1 ? "TÜRKİYE" : "DİĞER",
-                                            "city": form[8].value,
-                                            "phone": form[6].value,
-                                            "dateOfGraduation": form[15].value,
-                                            "question1": form[17].value,
-                                            "question2": form[18].value,
-                                            "question3": form[19].value
+                                            "email": form[4].value,
+                                            "school": form[10].value,
+                                            "faculty": form[11].value,
+                                            "department": form[12].value,
+                                            "grade": form[13].value,
+                                            "district": form[8].value,
+                                            "education_level": form[9].value,
+                                            "country": form[6].value,
+                                            "city": form[7].value,
+                                            "phone": form[5].value,
+                                            "dateOfGraduation": form[14].value,
+                                            "question1": question1,
+                                            "question2": interests,
+                                            "question3": contributions
                                         };
-
                                         axios.post(url,
                                             applyData
                                         ).then(res => {
@@ -131,7 +132,7 @@ const PersonalInformations = () => {
             <h4 className="mb-3 pt-3">Kişisel Bilgiler</h4>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="validationCustom01">
-                    <Form.Label>Adı</Form.Label>
+                    <Form.Label>Ad</Form.Label>
                     <Form.Control type="name" required maxLength="50" />
                     <Form.Control.Feedback type="invalid">
                         Lütfen bu alanı doldurunuz.
@@ -139,7 +140,7 @@ const PersonalInformations = () => {
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="validationCustom02">
-                    <Form.Label>Soyadı</Form.Label>
+                    <Form.Label>Soyad</Form.Label>
                     <Form.Control type="name" required maxLength="50" />
                     <Form.Control.Feedback type="invalid">
                         Lütfen bu alanı doldurunuz.
@@ -170,18 +171,7 @@ const PersonalInformations = () => {
                     </Form.Control.Feedback>
                 </Form.Group>
             </Row>
-            <Form.Group controlId="validationCustom05" className="mb-3">
-                <Form.Label>T.C Kimlik Numarası</Form.Label>
-                <Form.Control
-                    required
-                    onChange={NumericOnly}
-                    maxLength="11"
-                    minLength="11"
-                />
-                <Form.Control.Feedback type="invalid">
-                    Lütfen bu alanı doldurunuz.
-                </Form.Control.Feedback>
-            </Form.Group>
+
         </div>
     )
 }
@@ -218,12 +208,12 @@ const ContactInformations = () => {
             </Form.Group>
             <Form.Group controlId="validationCustom07" className="mb-3">
                 <Form.Label>Cep Telefonu</Form.Label>
-                <Form.Control
-                    placeholder="+05"
-                    onChange={NumericOnly}
-                    required
-                    maxLength="11"
-                    minLength="11"
+                <Form.Control                 
+                    placeholder="05XX-XXX-XXXX"
+                    onChange={e => NumericOnly(e)}
+                    maxLength={11}
+                    minLength={11}
+                    required                
                 />
                 <Form.Control.Feedback type="invalid">
                     Lütfen bu alanı doldurunuz.
@@ -234,8 +224,8 @@ const ContactInformations = () => {
                     <Form.Label>Ülke</Form.Label>
                     <Form.Select onChange={(e) => e.target.value === "2" ? setDisable(true) : setDisable(false)} aria-required="true" required >
                         <option value="">Seçiniz...</option>
-                        <option value="1">TÜRKİYE</option>
-                        <option value="2">DİĞER</option>
+                        <option value="TÜRKİYE">TÜRKİYE</option>
+                        <option value="DİĞER">DİĞER</option>
                     </Form.Select>
                     <Form.Control.Feedback type="invalid">
                         Lütfen birini seçiniz.
@@ -299,9 +289,6 @@ const EducationInformations = () => {
                     <Form.Label>Eğitim Seviyesi</Form.Label>
                     <Form.Select aria-required="true" required onChange={(e) => e.target.value > 4 ? setIsDisable(false) : setIsDisable(true)}>
                         <option value="">Seçiniz..</option>
-                        <option value="1">YOK</option>
-                        <option value="2">İLKOKUL</option>
-                        <option value="3">ORTAOKUL</option>
                         <option value="4">LİSE</option>
                         <option value="5">ÖN LİSANS</option>
                         <option value="6">LİSANS</option>
@@ -377,7 +364,7 @@ const EducationInformations = () => {
                     </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} controlId="validationCustom16">
-                    <Form.Label>Mezuniyet Tarihi</Form.Label>
+                    <Form.Label>Mezuniyet Tarihi<small style={{ fontStyle: "italic", color: "#7f8c8d" }}> (Mezun değilseniz tahmini mezuniyet tarihini giriniz)</small></Form.Label>
                     <Form.Control type="date" name="date" required />
                     <Form.Control.Feedback type="invalid">
                         Lütfen bir tarih seçiniz.
@@ -385,8 +372,8 @@ const EducationInformations = () => {
                 </Form.Group>
             </Row>
             <Form.Group className="mb-3">
-                <Form.Label>Özgeçmişinizi Yükleyiniz</Form.Label>
-                <Form.Control required type="file" />
+                <Form.Label>Özgeçmişinizi Yükleyiniz <small style={{ fontStyle: "italic", color: "#7f8c8d" }}>(PDF Formatında)</small></Form.Label>
+                <Form.Control required type="file" accept='.pdf' />
                 <Form.Control.Feedback type="invalid">
                     Lütfen bir dosya yükleyin.
                 </Form.Control.Feedback>
@@ -397,6 +384,55 @@ const EducationInformations = () => {
 
 
 const MemberInformations = () => {
+
+    const personalApplyContext = useContext(PersonalApplyContext);
+    const { addInterests } = useContext(PersonalApplyContext);
+    const { addContributions } = useContext(PersonalApplyContext)
+
+
+
+
+    const ilgiAlanlari = [
+        { value: 'Araştırma', label: 'Araştırma' },
+        { value: 'Elektrikli Araçlar', label: 'Elektrikli Araçlar' },
+        { value: 'Elektronik', label: 'Elektronik' },
+        { value: 'Havacılık', label: 'Havacılık' },
+        { value: 'İnsansız Hava Araçları', label: 'İnsansız Hava Araçları' },
+        { value: 'İnsansız Kara Araçları', label: 'İnsansız Kara Araçları' },
+        { value: 'İnsansız Sualtı Araçları', label: 'İnsansız Sualtı Araçları' },
+        { value: 'Kodlama', label: 'Kodlama' },
+        { value: 'Makine Öğrenmesi', label: 'Makine Öğrenmesi' },
+        { value: 'Mekanik Tasarım', label: 'Mekanik Tasarım' },
+        { value: 'Otonom Sistemler', label: 'Otonom Sistemler' },
+        { value: 'Robotik', label: 'Robotik' },
+        { value: 'Siber Güvenlik', label: 'Siber Güvenlik' },
+        { value: 'Uzay', label: 'Uzay' },
+        { value: 'Veri Bilimi', label: 'Veri Bilimi' },
+        { value: 'Yapay Zeka', label: 'Yapay Zeka' },
+        { value: 'Yazılım', label: 'Yazılım' },
+        { value: 'Blockchain', label: 'Blockchain' },
+        { value: 'IoT', label: 'IoT' },
+    ];
+
+    const katkiAlanlari = [
+        { value: 'Elektronik Devre Tasarımı', label: 'Elektronik Devre Tasarımı' },
+        { value: 'Nesnelerin İnterneti', label: 'Nesnelerin İnterneti' },
+        { value: 'Elektronik Programlama', label: 'Elektronik Programlama' },
+        { value: 'Enerji Teknolojileri', label: 'Enerji Teknolojileri' },
+        { value: 'Havacılık ve Uzay Teknolojileri', label: 'Havacılık ve Uzay Teknolojileri' },
+        { value: 'İleri Robotik', label: 'İleri Robotik' },
+        { value: 'Kodlama', label: 'Kodlama' },
+        { value: 'Malzeme Bilimi ve Nanoteknoloji', label: 'Malzeme Bilimi ve Nanoteknoloji' },
+        { value: 'Mobil Uygulama', label: 'Mobil Uygulama' },
+        { value: 'Otonom Sistemler', label: 'Otonom Sistemler' },
+        { value: 'Rapor Hazırlama', label: 'Rapor Hazırlama' },
+        { value: 'Robotik ve Kodlama', label: 'Robotik ve Kodlama' },
+        { value: 'Siber Güvenlik', label: 'Siber Güvenlik' },
+        { value: 'Tasarım ve Üretim', label: 'Tasarım ve Üretim' },
+        { value: 'Veri Bilimi', label: 'Veri Bilimi' },
+        { value: 'Yapay Zeka', label: 'Yapay Zeka' },
+        { value: 'Yazılım Teknolojileri', label: 'Yazılım Teknolojileri' },  
+    ]
     return (
         <div>
             <h4 className="mb-3 pt-3">Üyelik Bilgileri</h4>
@@ -404,67 +440,51 @@ const MemberInformations = () => {
                 <Form.Label>Bizden Nasıl Haberdar oldunuz?</Form.Label>
                 <Form.Select aria-required="true" required>
                     <option value="">Seçiniz...</option>
-                    <option value="1">Sosyal Medya</option>
-                    <option value="2">Kapsül Web</option>
-                    <option value="3">Fuar/Etkinlik</option>
-                    <option value="4">Arkadaş/Çevre</option>
-                    <option value="5">Reklam/Duyuru</option>
-                    <option value="6">Haber/Blog</option>
-                    <option value="7">E-Posta</option>
-                    <option value="8">Diğer</option>
+                    <option value="Sosyal Medya">Sosyal Medya</option>
+                    <option value="Kapsül Web">Kapsül Web</option>
+                    <option value="Fuar/Etkinlik">Fuar/Etkinlik</option>
+                    <option value="Arkadaş/Çevre">Arkadaş/Çevre</option>
+                    <option value="Reklam/Duyuru">Reklam/Duyuru</option>
+                    <option value="Haber/Blog">Haber/Blog</option>
+                    <option value="E-Posta">E-Posta</option>
+                    <option value="Diğer">Diğer</option>
                 </Form.Select>
                 <Form.Control.Feedback type="invalid">
                     Lütfen birini seçiniz.
                 </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group controlId="validationCustom18" className="mb-3">
-                <Form.Label>İlgi Alanlarınız Nelerdir?</Form.Label>
-                <Form.Select aria-required="true" required >
-                    <option value="">Seçiniz...</option>
-                    <option value="1">Araştırma</option>
-                    <option value="2">Elektirkli Araçlar</option>
-                    <option value="3">Elektronik</option>
-                    <option value="4">Havacılık</option>
-                    <option value="5">İnsansız Hava Araçları</option>
-                    <option value="6">İnsansız Kara Araçları</option>
-                    <option value="7">İnsansız Sualtı Araçları</option>
-                    <option value="8">Kodlama</option>
-                    <option value="9">Makine Öğrenmesi</option>
-                    <option value="10">Mekanik Tasarım</option>
-                    <option value="11">Otonom Sistemler</option>
-                    <option value="12">Robotik</option>
-                    <option value="13">Siber Güvenlik</option>
-                    <option value="14">Uzay</option>
-                    <option value="15">Veri Bilimi</option>
-                    <option value="16">Yapay Zeka</option>
-                    <option value="17">Yazılım</option>
-                </Form.Select>
+                <Form.Label>İlgi Alanlarınız Nelerdir? <small style={{ fontStyle: "italic", color: "#7f8c8d" }}> (Seçeneklerden farklı eklemek istediğiniz bir alan varsa yazınız)</small> </Form.Label>
+
+
+                <MultiSelect
+                    maxSelectedValues={4}
+                    data={ilgiAlanlari}
+                    onChange={addInterests}
+                    placeholder="Seçiniz"
+                    searchable
+                    creatable
+                    getCreateLabel={(query) => `${query} ilgi alanını ekle`}
+                    onCreate={null}
+                />
+
                 <Form.Control.Feedback type="invalid">
                     Lütfen birini seçiniz.
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="validationCustom19" className="mb-3">
-                <Form.Label>Bize Hangi Alanlarda Katkı Sağlayabilirsiniz?</Form.Label>
-                <Form.Select aria-required="true" required >
-                    <option value="">Seçiniz...</option>
-                    <option value="1">Elektronik Devre Tasarımı</option>
-                    <option value="2">Nesnelerin İnterneti</option>
-                    <option value="3">Elektronik Programlama</option>
-                    <option value="4">Enerji Teknolojileri</option>
-                    <option value="5">Havacılık ve Uzay Teknolojileri</option>
-                    <option value="6">İleri Robotik</option>
-                    <option value="7">Kodlama</option>
-                    <option value="8">Malzeme Bilimi ve Nanoteknoloji</option>
-                    <option value="9">Mobil Uygulama</option>
-                    <option value="10">Otonom Sistemler</option>
-                    <option value="11">Rapor Hazırlama</option>
-                    <option value="12">Robotik ve Kodlama</option>
-                    <option value="13">Siber GÜvenlik</option>
-                    <option value="14">Tasarım ve Üretim</option>
-                    <option value="15">Veri Bilimi</option>
-                    <option value="16">Yapay Zeka</option>
-                    <option value="17">Yazılım Teknolojileri</option>
-                </Form.Select>
+                <Form.Label>Bize Hangi Alanlarda Katkı Sağlayabilirsiniz?<small style={{ fontStyle: "italic", color: "#7f8c8d" }}> (Seçeneklerden farklı eklemek istediğiniz bir alan varsa yazınız)</small></Form.Label>
+                <MultiSelect
+                    maxSelectedValues={4}
+                    data={katkiAlanlari}
+                    onChange={addContributions}
+                    placeholder="Seçiniz"
+                    searchable
+                    creatable
+                    getCreateLabel={(query) => `${query} ilgi alanını ekle`}
+                    onCreate={null}
+                />
                 <Form.Control.Feedback type="invalid">
                     Lütfen birini seçiniz.
                 </Form.Control.Feedback>

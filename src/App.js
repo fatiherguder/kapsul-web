@@ -10,6 +10,7 @@ import Aos from "aos";
 import { AnimatePresence } from 'framer-motion';
 import "aos/dist/aos.css";
 import { useLocation, Switch, Route } from "react-router-dom";
+import MaintenancePage from './components/maintenance';
 
 const App = () => {
   useEffect(() => {

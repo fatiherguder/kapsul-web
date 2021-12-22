@@ -17,7 +17,7 @@ export default function LightingTextArea({setFadeValidation}) {
                     <Form.Check
                         required
                         className="soft"
-                        label={'Kişisel Verilerin Korunumuna İlişkin Muvafakatnameyi okudum,anlamadım ve kabul ediyorum'}
+                        label={'Kişisel Verilerin Korunumuna İlişkin Muvafakatnameyi okudum, anladım ve kabul ediyorum'}
                         feedback="You must agree before submitting."
                         feedbackType="invalid"
                     />

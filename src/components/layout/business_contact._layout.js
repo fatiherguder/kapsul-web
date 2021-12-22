@@ -13,7 +13,6 @@ export default function BusinessContactLayout({ setOpen, fileFolder, URL }) {
     const [validated, setValidated] = useState(false);
 
     const url = URL;
-    console.log(fileFolder)
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -33,10 +32,9 @@ export default function BusinessContactLayout({ setOpen, fileFolder, URL }) {
                     .on('state_changed',
                         (snapShot) => {
                             //takes a snap shot of the process as it is happening
-                            console.log(snapShot)
+                            
                         }, (err) => {
                             //catches the errors
-                            console.log(err)
                         }, () => {
                             // gets the functions from storage refences the image storage in firebase by the children
                             // gets the download url then sets the image from firebase as the value for the imgUrl key:
@@ -133,7 +131,7 @@ const BusinessField = () => {
             <Form.Group controlId="validationCustom04" className="mb-3">
                 <Form.Label>Cep Telefonu</Form.Label>
                 <Form.Control
-                    placeholder="+05"
+                    placeholder="05XX-XXX-XXXX"
                     onChange={NumericOnly}
                     required
                     maxLength="11"
@@ -159,8 +157,8 @@ const BusinessField = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3">
-                <Form.Label>Proje Dosyası</Form.Label>
-                <Form.Control required type="file" />
+                <Form.Label>Proje Dosyası <small style={{ fontStyle: "italic", color: "#7f8c8d" }}> (PDF formatında)</small> </Form.Label>
+                <Form.Control required type="file" accept='.pdf' />
                 <Form.Control.Feedback type="invalid">
                     Lütfen bir dosya yükleyin.
                 </Form.Control.Feedback>
