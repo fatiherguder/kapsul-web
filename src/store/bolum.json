@@ -116612,6 +116612,13 @@
             "universite_id": "183",
             "name": "İş Sağlığı Ve Güvenliği",
             "status": "1"
+        },
+        {
+            "bolum_id": "16660",
+            "fakulte_id": "2661",
+            "universite_id": "163",
+            "name": "Yazılım Mühendisliği",
+            "status": "1"
         }
     ]
 }

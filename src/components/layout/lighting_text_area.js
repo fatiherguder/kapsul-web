@@ -24,6 +24,7 @@ export default function LightingTextArea({setFadeValidation}) {
                 </Form.Group>
                 <Button onClick={e => setFadeValidation(true)} type="submit" style={{backgroundColor:"#216fb6"}} className="my-3 px-4" size="lg">Başvuru Yap!</Button>
             </div>
+            <p className="mb-4 soft" style={{ fontStyle: "italic"}}>Başvuru sisteminde karşılaştığınız hata ve sorunlarla ilgili <strong>bilgiislem@kapsul.com</strong> e-posta adresi üzerinden iletişime geçebilirsiniz.</p>
         </div>
     )
 }

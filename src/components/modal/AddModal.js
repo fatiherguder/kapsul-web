@@ -45,11 +45,11 @@ const AddModal = ({ show, handleClose }) => {
     const [facultyID, setFacultyID] = useState(0);
 
     var filterFaculity = facultyJSON["universite_fakulte"].filter(function (item) {
-        return item["universite_id"] === universityID.toString();
+        return item["universite_id"] == universityID;
     })
 
     var filterDepartment = departmentJSON["universite_bolum"].filter(function (item) {
-        return item["fakulte_id"] === facultyID.toString();
+        return item["fakulte_id"] == facultyID;
     })
 
     const handleReset = () => {
@@ -105,7 +105,7 @@ const AddModal = ({ show, handleClose }) => {
                     </Form.Group> : null}
                     {insType != "LİSE" && insType != "0" ? <Form.Group className="mb-3"  >
                         <Form.Label>Üniversite</Form.Label>
-                        <Form.Select onChange={(e) => { setUniversityID(e.target.selectedIndex-1); onInputChange(e) }} aria-required="true" required value={university || ""} name="university">
+                        <Form.Select onChange={(e) => { setUniversityID(e.target.selectedIndex); console.log(e.target.selectedIndex); onInputChange(e) }} aria-required="true" required value={university || ""} name="university">
                             <option value="">Seçiniz..</option>
                             {                         
                                 universityJSON["data"].map(function (item) {

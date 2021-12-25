@@ -21,7 +21,7 @@ const EditModal = ({ showEdit, handleEditClose, member }) => {
         setNewMember({ ...newMember, [e.target.name]: e.target.value })
     }
 
-    console.log(newMember);
+    
 
     const [universityID, setUniversityID] = useState(0);
 

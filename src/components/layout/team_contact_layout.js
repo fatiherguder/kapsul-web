@@ -66,7 +66,7 @@ export default function TeamContactLayout({ setOpen }) {
         }).catch(err => {
             if (err) {
                 setOpen(false)
-                toast.error("Bir hata oluştu", {
+                toast.error("Bir hata oluştu. Tekrar başvurun yada hata ile ilgili bilgiislem@kapsul.com adresine mail atınız.", {
                     position: toast.POSITION.BOTTOM_RIGHT
                 })
             }
@@ -473,7 +473,7 @@ const ConsultantInformation = ({ setFile }) => {
                 <Form.Control.Feedback type="invalid">
                     Lütfen bir dosya yükleyin.
                 </Form.Control.Feedback>
-                <Anchor href="http://kapsulkonya.com/static/media/malzeme_listesi_sablon.xlsx" target="_blank">İhtiyaç Listesi Şablon</Anchor>
+                <Anchor href="https://docs.google.com/spreadsheets/d/12b7kG3oF28rtu1PcJQ3Yb2L_3RJmCVHJ/edit?usp=sharing&ouid=103399581022683838816&rtpof=true&sd=true" target="_blank">İhtiyaç Listesi Şablon</Anchor>
             </Form.Group >
         </div>
 

@@ -639,12 +639,7 @@
             "universite_id": "128",
             "name": "Konya Gıda Ve Tarım Üniversitesi",
             "status": "1"
-        },
-        {
-            "universite_id": "184",
-            "name": "Konya Teknik Üniversitesi",
-            "status": "1"
-        },
+        },       
         {
             "universite_id": "129",
             "name": "Kto Karatay Üniversitesi",
@@ -918,6 +913,11 @@
         {
             "universite_id": "183",
             "name": "Yüzüncü Yıl Üniversitesi",
+            "status": "1"
+        },
+        {
+            "universite_id": "184",
+            "name": "Konya Teknik Üniversitesi",
             "status": "1"
         }
         

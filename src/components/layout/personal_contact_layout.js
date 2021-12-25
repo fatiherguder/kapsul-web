@@ -87,7 +87,7 @@ export default function ContactLayout({ setOpen }) {
                                             .catch(
                                                 err => {
                                                     if (err) {
-                                                        toast.error(err)
+                                                        toast.error("Bir hata oluştu. Tekrar başvurun yada hata ile ilgili bilgiislem@kapsul.com adresine mail atınız.")
                                                         setOpen(false)
                                                     }
                                                     setOpen(false)
