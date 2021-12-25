@@ -5,6 +5,7 @@ import Base from './base';
 import ARGEContact from './views/contact/ar_ge_contact';
 import BusinessIdeaContact from './views/contact/business_idea_contact';
 import PersonalContact from './views/contact/personal_contact';
+import RoverContact from "./views/contact/rover_contact";
 import TeamContact from './views/contact/team_contact';
 import Aos from "aos";
 import { AnimatePresence } from 'framer-motion';
@@ -39,7 +40,10 @@ const App = () => {
             </Route>
             <Route path="/apply/arge">
               < ARGEContact />
-            </Route>
+            </Route>            
+            <Route path="/apply/rover">
+              < RoverContact/>
+            </Route>            
           </MemberContextProvider>
         </Switch>
       </AnimatePresence>

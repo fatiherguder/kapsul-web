@@ -5,24 +5,21 @@ import "./join_us.css"
 import "aos/dist/aos.css";
 
 
-export default function JoinUs({dataAos}) {
+export default function JoinUs({ dataAos }) {
 
     return (
         <section id='join-us'>
             <div className="join-us-page">
                 <div className="join-us-wrapper">
                     <div className="join-us-image-wrapper">
-                        <img src={robot} data-aos={dataAos} data-aos-duration="600" data-aos-easing="ease-in-out"/>
+                        <img src={robot} data-aos={dataAos} data-aos-duration="600" data-aos-easing="ease-in-out" />
                     </div>
                     <div className="join-us-button-wrapper">
-                        <div className="wrapper-one">
-                            <FormRouterButton name="Teknofest Başvurusu" link="/team" />
-                            <FormRouterButton name="İş Fikri Başvurusu" link="/business" />
-                        </div>
-                        <div className="wrapper-two">
-                            <FormRouterButton name="Ar-Ge Başvurusu" link="/arge" />
-                            <FormRouterButton name="Bireysel Başvuru" link="/personal" />
-                        </div>
+                        <FormRouterButton name="Teknofest Başvurusu" link="/team" />
+                        <FormRouterButton name="İş Fikri Başvurusu" link="/business" />
+                        <FormRouterButton name="Ar-Ge Başvurusu" link="/arge" />
+                        <FormRouterButton name="Bireysel Başvuru" link="/personal" />
+                        <FormRouterButton name="Rover Başvurusu" link="/rover" />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,21 @@
+.form-container{
+    text-align: left;    
+    width: 80% !important;
+    margin: 0 auto; 
+    background: #f8f9fa;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form-titles{
+    font-size: 1.5rem;
+    font-weight: 500;  
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 100% !important;        
+        position: absolute;
+        top: 0;
+    }
+    
+}
